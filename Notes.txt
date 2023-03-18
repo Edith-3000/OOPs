@@ -1,0 +1,496 @@
+* OOPS - Object-oriented programming is a programming paradigm based on the concept of "objects", which can 
+         contain data and code: data in the form of fields, and code, in the form of procedures. 
+         A feature of objects is that an object's own procedures can access and often modify the data fields of
+         itself.
+
+* When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory 
+  is allocated.
+
+* Data Hiding is a feature of OOP languages which doesn't let the program access an object's data directly by 
+  non member functions, keeping it hidden and safe from accidental alteration.
+* Data Hiding is a subset of Data Abstraction.
+* Data hiding is a way to implement data abstraction.
+* Data abstraction refers to providing only essential information about the data to the outside world, hiding 
+  the background details or implementation eg.  just like how a switchboard shows only the switches but hides 
+  the circuitry.
+
+* Let's take an example of cooking of a dish in hotel.
+  We go to hotel, eat our favorite dish.
+  Chefs who are master in making particular dish most of the time have their so called secret ingredients. This 
+  ingredients are something that they don't want to reveal. Here comes Data Hiding.
+  Also we as a customer are dealing with the end quality of the dish and not how it is made. So chefs never 
+  tell us how did they manage to make it. So here comes Abstraction.
+
+* So the main difference between these two twins of object oriented programming which don't possess same 
+  meaning at all is ===>
+  Abstraction is hiding the implementation details by providing a layer over the basic functionality. 
+  Data Hiding is hiding the sensual data during the process.
+
+* Polymorphism is a OOPs concept where one name can have many forms.
+* Polymorphism in C++ is implemented by operator overloading and function overloading.
+  1. Operator Overloading: The process of making an operator to exhibit different behaviours in different 
+                           instances is known as operator overloading.
+  2. Function Overloading: Function overloading is using a single function name to perform different types of 
+                           tasks. Polymorphism is extensively used in implementing inheritance.
+
+* Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is 
+  already a class that includes some of the code that we want, we can derive our new class from the existing 
+  class. By doing this, we are reusing the fields and methods of the existing class.
+
+* C++ programming allows calling multiple functions using a single object name in a single statement, it is 
+  known as cascaded function call in C++.
+  As we know that, this pointer returns the pointer of current object, by using this pointer we can achieve 
+  cascaded function calls.
+  Ref: https://www.includehelp.com/cpp-tutorial/cascaded-function-call.aspx
+
+* Each object gets its OWN copy of data members and all objects share a "SINGLE" copy of member functions. 
+* But remember that the static variables in a class are shared by the objects. There can not be multiple copies 
+  of same static variables for different objects. Also because of this reason static variables can not be  
+  initialized using constructors.
+* Static variable inside a class should be initialized explicitly by the user using the class name and scope 
+  resolution operator outside the class, for e.g. ===>
+  int Gfg::i=1 (syntax -> static_variable_type class_name::variable_name = variable_value).
+
+* We are allowed to invoke a static member function using the object and the '.' operator but it is recommended
+  to invoke the static members using the class name and the scope resolution operator.
+  Static member functions are allowed to access only the static data members or other static member functions, 
+  they can not access the non-static data members or member functions of the class.
+  Ref: https://www.geeksforgeeks.org/static-keyword-cpp/
+
+* An object declared as const cannot be modified and hence, can invoke only const member functions as these 
+  functions ensure not to modify the object. Any attempt to change the data member of const objects results 
+  in a compile-time error.
+* When a function is declared as const, it can be called on any type of object, i.e. it can be called by the
+  const object as well as non-const objects.
+* Whenever an object is declared as const, it needs to be initialized at the time of declaration. However, the 
+  object initialization while declaring is possible only with the help of constructors.
+* The idea of const functions is not to allow them to modify the object on which they are called. It is generally
+  recommended to make as many functions const as possible so that accidental changes to objects are avoided.
+  Ref: https://www.geeksforgeeks.org/const-member-functions-c/
+
+* https://stackoverflow.com/questions/2216239/what-is-the-difference-between-a-static-and-const-variable#:~:text=The%20short%20answer%3A,once%20before%20the%20program%20startup.
+
+* https://www.geeksforgeeks.org/difference-between-static-and-constant-function-in-cpp/
+
+* In C++ if a function returns a value by reference then it can be used as left value (lvalue) of the assignment
+  operator. (it is not allowed in C). Visit https://www.youtube.com/watch?v=HpYEgXDz5kE for more clarification.
+
+* It is allowed to use "pointer to pointer" in both C and C++, but we can use "Reference to pointer" only in C++.   
+* "this" pointer stores the address of the object for which the function is called. (in C++)
+
+* We may change the value of const variable by using pointer.
+  Ref: https://www.tutorialspoint.com/how-to-modify-a-const-variable-in-c#:~:text=Now%20we%20will%20see%20how,will%20not%20generate%20any%20error.
+
+* "this" is a hidden argument to every member function of a class and its type for an object of Class X is 
+  X* const (i.e. "this" is a const pointer to a variable). 
+  This clearly means that you can not assign a new vale to "this" as it is defined as a const. You can however 
+  modify the value pointed to by "this".
+
+* A constant pointer is a pointer that cannot change the address its holding. In other words, we can say that 
+  once a constant pointer points to a variable then it cannot point to any other variable.
+  Ref: https://stackoverflow.com/questions/21476869/constant-pointer-vs-pointer-to-constant
+
+* The 'this' pointer is passed as a hidden argument to all nonstatic member function calls and is available as a 
+  local variable within the body of all nonstatic functions. 'this' pointer is not available in static member 
+  functions as static member functions can be called without any object (with class name).
+
+* The type of "this" depends upon function declaration. If the member function of a class X is declared const, 
+  the type of "this" is const X *const, if the member function is declared volatile, the type of this is 
+  volatile X *const, and if the member function is declared const volatile, the type of this is 
+  const volatile X *const.
+
+* Ideally delete operator should not be used for this pointer i.e. avoid doing --> "delete this"
+  Reasons ===>
+  1. delete operator works only for objects allocated using operator new. If the object is created using new, 
+     then we can do "delete this", otherwise behavior is undefined.
+  2. Once "delete this" is done, any member of the deleted object should not be accessed after deletion.
+  # Post Scriptum - The best thing is to not do "delete this" at all.
+
+* Access Modifiers are used to implement an important feature of Object-Oriented Programming known as 
+  Data Hiding.
+* Access Modifiers or Access Specifiers in a class are used to set the accessibility of the class members. 
+* Only the member functions or the friend functions are allowed to access the private data members of a class.
+* Protected access modifier is similar to that of private access modifiers, the difference is that the class 
+  member declared as Protected are inaccessible outside the class but they can be accessed by any subclass
+  (derived class) of that class.  
+
+* C++ provides an inline functions to reduce the function call overhead. Inline function is a function that 
+  is expanded in line when it is called. When the inline function is called whole code of the inline function 
+  gets inserted or substituted at the point of inline function call. This substitution is performed by the 
+  C++ compiler at compile time.
+
+* Remember, inlining is only a request to the compiler, not a command. Compiler can ignore the request for 
+  inlining.
+* All the functions "defined" inside the class are implicitly inline. 
+* If you need to explicitly declare inline function in the class then just declare the function inside the class
+  and define it outside the class using inline keyword.
+* The best programming style is to just write the prototype of function inside the class and specify it as an 
+  inline in the function definition outside the class.
+
+* Constructors are special class members which are called by the compiler every time an object of that class 
+  is instantiated.
+* If we do not specify a constructor, C++ compiler generates a default constructor for us. The default 
+  constructor has no parameters and has an empty body.
+* A constructor without any arguments or with default value for every argument, is said to be default 
+  constructor.
+* The constructors can be called explicitly or implicitly.
+    Example e = Example(0, 50); // Explicit call (but don't use e.Example(0, 50);)
+    Example e(0, 50);           // Implicit call
+
+* A copy constructor is a member function which initializes an object using another object of the same class. 
+  A copy constructor has the following general function prototype: ClassName(const ClassName &old_obj);
+
+* By default the compiler provides the default and copy constructors.    
+
+* Copy constructor is called when a new object is created(or initialized) from an existing object, as a copy of 
+  the existing object. And assignment operator is called when an already initialized object is assigned a new 
+  value from another existing object.
+  t2 = t1; // calls assignment operator, same as "t2.operator=(t1);" 
+  Test t3 = t1; // calls copy constructor, same as "Test t3(t1);"
+
+* A Copy Constructor creates a new object, which is exact copy of the existing object. The compiler provides a 
+  default Copy Constructor to all the classes.
+
+* What would be the problem if we remove copy constructor from a code and use it? 
+  Visit: https://www.geeksforgeeks.org/copy-constructor-in-cpp/ (see section at last of the page).
+
+* Yes, a copy constructor can be made private. When we make a copy constructor private in a class, objects of 
+  that class become non-copyable.
+
+* Whenever we define one or more non-default constructors (with parameters) for a class, a default constructor
+  (without parameters) should also be explicitly defined as the compiler will not provide a default constructor 
+  in this case. However, it is not necessary but it’s considered to be the best practice to always define a  
+  default constructor.
+
+* Destructor is another special member function that is called by the compiler when the scope of the object ends. 
+  The main function of a destructor is to release the resources being held by the object.
+  It is the last method to get executed before an object gets destroyed (it's scope ends).
+  NOTE: It is a misconception that the destructor destructs or deletes the object.
+
+* There can only be one destructor in a class (i.e. destructor overloading is not allowed in C++, whereas 
+  constructor overloading is allowed).
+
+* When do we need to write a user-defined destructor?
+  If we do not write our own destructor in class, compiler creates a default destructor for us. 
+  The default destructor works fine unless we have dynamically allocated memory or pointer in class. When a class 
+  contains a pointer to memory allocated in class, we should write a destructor to release memory before the class 
+  instance is destroyed. This must be done to avoid memory leak. 
+    
+* Can a destructor be virtual?
+  Yes, in fact, it is always a good idea to make destructors virtual in base class when we have a virtual function.   
+
+* In C++ we can pass class’s objects as arguments and also return them from a function the same way we pass and 
+  return other variables. No special keyword or header file is required to do so.
+
+* A derived class doesn’t inherit access to private data members of the base class. However, it does inherit a full
+  parent object of base class, which contains any private members which that base class declares.
+  In other words, base class's private members are "AVAILABLE" to the derived class, but not "ACCESSIBLE".
+
+* Modes of Inheritance (Access Modes) ----->
+  1. Public mode: If we derive a sub class from a public base class. Then the public member of the base class will 
+                  become public in the derived class and protected members of the base class will become protected 
+                  in derived class.
+  
+  2. Protected mode: If we derive a sub class from a protected base class. Then both public member and protected 
+                     members of the base class will become protected in derived class.
+
+  3. Private mode: If we derive a sub class from a private base class. Then both public member and protected 
+                   members of the base class will become private in derived class.   
+  
+  # NOTE: The private members of the base class cannot be ACCESSED by derived class in any case, but it is true  
+          that ALL the members of parent class are AVAILABLE for the child class.
+
+* Types of inheritance ===>
+   1. Single Inheritance
+   2. Multiple Inheritance
+   3. Multilevel Inheritance
+   4. Hierarchical Inheritance
+   5. Hybrid Inheritance.
+
+* In Multiple Inheritance the constructors of classes are called from the child class towards base class and are
+  executed from base class towards child class. 
+  Whereas the destructors of classes are called from the child class towards base class and are executed from child
+  class towards base class. 
+
+* THE DIAMOND PROBLEM ===> It occurs when 2 (here B & C) base classes of a derived class (i.e. D) have a common 
+                           base class (i.e. A). This causes ambiguity, as D gets 2 copies of all the attributes 
+                           of A.
+                                                
+                                                A         
+                                               / \        
+                                              /   \          
+                                             /     \      
+                                            B       C         
+                                            \       /     
+                                             \     /        
+                                              \   /           
+                                                D              
+   Solution to this ambiguity: Virtual base classes are used in virtual inheritance in a way of preventing multiple 
+   "instances" of a given class appearing in an inheritance hierarchy when using multiple inheritances.
+
+   Syntax 1:
+      class B : virtual public A {};
+   Syntax 2:
+      class C : public virtual A {};
+
+   * When a base class is specified as a virtual base, it can act as an indirect base more than once without 
+     duplication of its data members. A single copy of its data members is shared by all the base classes that use 
+     virtual base.
+   
+* Order of Constructor Call with Inheritance in C++ -------->
+    Points to Remember: 
+    1. Whether derived class's default constructor is called or parameterised is called, base class's default 
+       constructor is always called inside them.
+
+    2. To call base class's parameterised constructor inside derived class's parameterised constructor, we 
+       must mention it explicitly while declaring derived class's parameterized constructor. 
+       The syntax for the same is: ===>
+       Derived_class_name (data_type_of_arguement variable_name):Base_class_name(variable_name),
+       for e.g. derived (int i):Base(i);
+
+* Why is Base class Constructor called inside Derived class?
+  Constructors have a special job of initializing the object properly. A Derived class constructor has access only 
+  to its own class members, but a Derived class object also have inherited property of Base class, and only base 
+  class constructor can properly initialize base class members. 
+  Hence all the constructors are called, else object wouldn't be constructed properly.
+
+* When we use 'virtual' keyword, the default constructor of "grandparent class" is called by default even if the 
+  parent classes explicitly call parameterized constructor. 
+  Fore more info visit: https://www.geeksforgeeks.org/multiple-inheritance-in-c/
+
+* How to call the parameterized constructor of the "grandparent class"?      
+  The constructor has to be called explicitly by the child class.
+  * In general, it is not allowed to call the grandparent’s constructor directly by the child class, it has to be 
+   called through parent class. It is allowed only when ‘virtual’ keyword is used.
+
+* Polymorphism in C++ ===> 
+  1. Compile Time Polymorphism (also known as early binding/static binding/compile time binding)
+     * In this type the function call is resolved at compile time.
+     * In C++, compile polymorphism is implemented using OVERLOADING (function or operator overloading).
+
+  2. Run time polymorphism (also known as late binding/dynamic binding/run time binding) 
+     * In this type the function call is resolved at run time.
+     * In C++, runtime polymorphism is implemented using method OVERIDING.
+
+     * Matching of function call with function prototype is called as binding.
+       Fore more info visit https://www.youtube.com/watch?v=oWTY5AnANfo                     
+
+* In C++, functions can not be overloaded if they differ only in the return type.   
+
+* Difference b/w overloading & overiding --->
+  https://www.javatpoint.com/method-overloading-vs-method-overriding-in-java
+
+* A friend function in C++ is a function that is preceded by the keyword “friend”. When the function is declared 
+  as a friend, then it can access the private and protected data members of the class.
+
+* The friend function is declared inside the class whose private and protected data members are to be accessed. 
+  The function can be defined anywhere in the code file and we need not use the keyword friend or the :: operator.
+
+* A friend function can be friend to more than 1 classes, that is why a friend function is useful when members
+  of different classes are to be accessed simultaneouly and to be worked with.
+
+*  A friend function can be:
+   1) A method of another class
+   2) A global function
+
+* A friend function cannot access the private and protected data members of the class directly. It needs to make
+  use of a class object and then access the members using the dot operator.
+
+* Friendship is not mutual unless we make it so. If class A is a friend of B, then B doesn’t become a friend 
+  of A automatically.
+
+* Friendship is not inherited.
+
+* Operator overloading can be done either by non-static member function or friend function.
+* For operator overloading to work, at least one of the operands must be a "user defined" class object.
+
+* Operator Overloading can be done by using 4 approaches ----->
+  1. Overloading unary operator by non static member function. (in this case no arguement is passed to the 
+                                                                overloaded function)
+
+  2. Overloading unary operator by friend function. (in this case only one arguement is passed to the 
+						     overloaded function)
+
+  3. Overloading binary operator by non static member function. (in this case only one arguement is passed 
+                                                                 to the overloaded function)
+
+  4. Overloading binary operator by friend function. (in this case only two arguements are passed to the 
+                                                      oveloaded function)
+
+* Some of operators which cannot be overloaded are ---->
+  ?: (ternary)
+  . (member selection)
+  .* (member selection with pointer-to-member)
+  :: (scope resolution)
+  sizeof (object size information)
+
+* Operator cannot be used to overload when declaring that function as friend function = () or [] or ->
+
+* Compiler implicitly defines an assignment operator and copy constructor.
+
+* Then when should we write our own assignment operator in C++?
+  ===> The answer is same as that for Copy Constructor. If a class doesn’t contain pointers, then there 
+       is no need to write assignment operator and copy constructor. The compiler creates a default copy 
+       constructor and assignment operators for every class. The compiler created copy constructor and 
+       assignment operator may not be sufficient when we have pointers or any run time allocation of 
+       resource like file handle, a network connection etc. 
+
+* In C++, it is a very good practice and highly recommended that assignment operator should be overloaded
+  with self assignment check.
+* When we need deep copy assignment operator must be overloaded.
+* It's a good practice that we should create our own copy constructor when overloading assignment opeartor
+  and vice versa.
+
+* Assignment operator overloading must always be done by a non static member function with exactly one 
+  parameter rather than by friend function. 
+  REASON: Because there is already an implicit operator overloading function for '=' in the class to do 
+          shallow copying. So even if you overload using a a friend function you will never be able to 
+          call it, as any call made by us would call the implicit shallow copying method rather than the 
+          overloaded friend function. 
+  Ref: ====>
+  https://stackoverflow.com/questions/3933637/why-cannot-a-non-member-function-be-used-for-overloading-the
+  -assignment-operator
+
+* Visit: https://www.youtube.com/watch?v=I6C2u8WjHto
+         https://www.youtube.com/watch?v=ieD3l--qgK4&pbjreload=10
+         [Very thorough explanation is given for assignment operator overloading]
+
+* NOTE: The arguments in the operator overloading are passed only by reference, it will not work if 
+        arguements are passed by value, because a copy of the object is passed to operator (op)() function.    
+
+* The operator symbol for both pre and post increment or decrement are the same. Hence, we need two different
+  function definitions to distinguish between them. This is achieved by passing a dummy "int" parameter in 
+  the post version.  
+
+* What is the purpose of dummy parameter in postfix operator overload?
+  The int parameter is a dummy parameter used to differentiate between prefix and postfix versions of the 
+  operators. When the user-defined postfix operator is called, the value passed in that parameter is always 
+  zero, although it may be changed by calling the operator using function call notation like 
+  (e.g., a.operator++(2) or operator++(a, 2)). 
+  [Visit https://www.youtube.com/watch?v=SpmAs8REM6Y for thorough explanation]
+
+* "cout" (console output) and "cin" (console input) are the objects of "ostream" and "istream" class
+  respectively (they are not operators).
+
+* "<<" is stream insertion operator. The left hand operand of this operator must be an ostream object. 
+  As the direction of the arrows indicate, we write to the stream. We insert to the stream.
+
+* ">>" is stream extraction operator. The left hand operand of this operator must be an istream object. 
+  Again, direction of the arrows indicate that we read from the stream. We extract from the stream.
+
+* << and >> operators must be overloaded as a global function. And if we want to allow them to access 
+  private data members of class, we must make them friend.  
+ 
+* Why these "<<" and ">>" must be overloaded as global?
+  In operator overloading, if an operator is overloaded as member, then it must be a member of the object on 
+  left side of the operator. For example, consider the statement “ob1 + ob2” (let ob1 and ob2 be objects of 
+  two different classes). To make this statement compile, we must overload ‘+’ in class of ‘ob1’ or make ‘+’ 
+  a global function.
+  The operators ‘<<' and '>>' are called like 'cout << ob1' and 'cin >> ob1'. So if we want to make them a 
+  member method, then they must be made members of ostream and istream classes, which is not a good option 
+  most of the time. Therefore, these operators are overloaded as global functions with two parameters, cout 
+  and object of user defined class.                 
+  # Visit GfG or https://www.youtube.com/watch?v=2972LRdyquk for thorough explanation.
+
+* Function Overriding ----->
+  It is the mechanism using which a function "defined" in the base class is once again "defined" in the derived
+  class. In this case, we say the function is overridden in the derived class.
+  OR 
+  If derived class defines same function as defined in its base class, it is known as function overriding in 
+  C++. It is used to achieve runtime polymorphism. It enables you to provide specific implementation of the 
+  function which is already provided by its base class.
+
+* Function overriding cannot be done within a class.
+* The function is overridden in the derived class only.
+* Function from a base class that we are overriding should have the same signature or prototype i.e. it should 
+  have the same name, same return type and same argument list.
+
+* Fore more important points on runtime polymorphism ===>
+  visit: https://www.softwaretestinghelp.com/runtime-polymorphism-in-cpp/
+
+* See UPCASTING & DOWNCASTING concept on internet.
+
+* Wherever you see "Virtual" keyword then it means we give compiler the signal that instead of doind early 
+  binding of functions, it has to to late binding.
+* Virtual function is binded at runtime.
+* Non-virtual function is binded at compile time.
+
+* Whenever compiler do early binding it refers to the "TYPE" of the pointer, but during late binding, it 
+  refers to the "DATATYPE BEING REFERENCED BY THE POINTER"
+  visit: https://www.youtube.com/watch?v=Z_FiER8aAqM&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=45 
+
+* NOTE: The idea is that virtual functions are called according to the type of the object instance pointed to 
+        or referenced, not according to the type of the pointer or reference.
+        In other words, virtual functions are resolved late, at runtime.
+
+* One of the key features of derived classes is that a pointer to a derived class is type-compatible with a 
+  pointer to its base class. Polymorphism is the art of taking advantage of this simple but powerful and 
+  versatile feature, that brings Object Oriented Methodologies to its full potential.
+  In C++, a special type/subtype relationship exists in which a base class pointer or a reference can address 
+  any of its derived class subtypes without programmer intervention. 
+  visit: https://stackoverflow.com/questions/9425822/why-use-base-class-pointers-for-derived-classes
+
+* Why use base class pointer for derived classe object?
+  This is the very use of polymorphism. It allows you to treat objects uniformly while allowing you to have 
+  specific implementation.
+  Source: https://stackoverflow.com/questions/9425822/why-use-base-class-pointers-for-derived-classes
+          https://www.geeksforgeeks.org/base-class-pointer-pointing-to-derived-class-object/
+
+* Base class pointer can point to the object of any of it's descendent class, BUT CONVERSE IS NOT TRUE.
+
+* A virtual function is a member function which is declared within a base class and is re-defined(Overriden) 
+  by a derived class. When you refer to a derived class object using a pointer or a reference of the base class, 
+  you can call a virtual function for that object and execute the derived class’s version of the function.
+
+* Rules for Virtual Functions ----->
+  1. Virtual functions cannot be static and also cannot be a friend function of another class.
+  2. Virtual functions should be accessed using pointer or reference of base class type to achieve run time 
+     polymorphism.
+  3. The prototype of virtual functions should be same in base as well as derived class.
+  4. They are always defined in base class and overridden in derived class. It is not mandatory for derived 
+     class to override (or re-define the virtual function), in that case base class version of function is used.
+  5. A class may have virtual destructor but it cannot have a virtual constructor.    
+
+* It is recommended, any time you have a virtual function in a class, you should immediately add a virtual 
+  destructor (even if it does nothing). This way, you ensure against any surprises later.
+
+* Virtual Destructor: Deleting a derived class object using a pointer of base class type that has a non-virtual
+  destructor results in undefined behavior. To correct this situation, the base class should be defined with 
+  a virtual destructor. 
+  Making base class destructor virtual guarantees that the object of derived class is destructed properly, 
+  i.e., both base class and derived class destructors are called. 
+
+* Late binding(Runtime) is done in accordance with the content of pointer (i.e. location pointed to by pointer) 
+  and Early binding(Compile time) is done according to the type of pointer. 
+  Source: https://www.geeksforgeeks.org/virtual-function-cpp/
+
+* NOTE: If we have created a virtual function in the base class and it is being overridden in the derived class 
+        then we don't need virtual keyword in the derived class, functions are automatically considered as 
+        virtual functions in the derived class. 
+
+* Sometimes implementation of all function cannot be provided in a base class because we don’t know the 
+  implementation. Such a class is called abstract class.
+  OR A class containing at least 1 pure virtual function is called an abstract class.
+
+* An abstract class is a class that is designed to be specifically used as a base class. An abstract class contains
+  at least one pure virtual function. You declare a pure virtual function by using a pure specifier (= 0) in the 
+  declaration of a virtual member function in the class declaration.
+
+* Virtual member functions are inherited. A class derived from an abstract base class will also be abstract unless 
+  you override each pure virtual function in the derived class.
+  Ref: https://www.ibm.com/docs/en/zos/2.4.0?topic=only-abstract-classes-c
+
+* We can have pointers and references of abstract class type but we can't instantiate an abstract class i.e. no 
+  object formation of abstarct of abstrct class is allowed.
+
+* A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have 
+  implementation, we only declare it. A pure virtual function is declared by assigning 0 in declaration.
+  OR 
+  A do nothing virtual function is a pure virtual function.
+  visit: https://www.youtube.com/watch?v=0IR_D1qZy2g&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=46
+
+* Why pure virtual functions are made ?
+  ===> So as to create an abstract class.
+* So why an abstract class is created ?
+ ===> So as to incorporate the concept of generalization in object oriented programming, for detais refer ==>
+      https://www.youtube.com/watch?v=0IR_D1qZy2g&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=46
