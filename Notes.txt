@@ -340,7 +340,7 @@
   :: (scope resolution)
   sizeof (object size information)
 
-* Operator cannot be used to overload when declaring that function as friend function are = () or [] or ->
+* Operator cannot be used to overload when declaring that function as friend function are:=>  = () or [] or ->
   # Ref: https://www.geeksforgeeks.org/types-of-operator-overloading-in-cpp/
 
 * Compiler implicitly defines an assignment operator and copy constructor.
@@ -370,8 +370,8 @@
   https://stackoverflow.com/questions/3933637/why-cannot-a-non-member-function-be-used-for-overloading-the
   -assignment-operator
 
-* Visit: https://www.youtube.com/watch?v=I6C2u8WjHto
-         https://www.youtube.com/watch?v=ieD3l--qgK4&pbjreload=10
+* Visit: https://www.youtube.com/watch?v=ieD3l--qgK4&pbjreload=10
+         https://www.youtube.com/watch?v=I6C2u8WjHto
          [Very thorough explanation is given for assignment operator overloading]
 
 * NOTE: The arguments in the operator overloading are passed only by reference, it will not work if 
@@ -379,7 +379,8 @@
 
 * The operator symbol for both pre and post increment or decrement are the same. Hence, we need two different
   function definitions to distinguish between them. This is achieved by passing a dummy "int" parameter in 
-  the post version.  
+  the post version.
+  Ref: https://www.geeksforgeeks.org/what-are-the-operators-that-can-be-and-cannot-be-overloaded-in-cpp/
 
 * What is the purpose of dummy parameter in postfix operator overload?
   The int parameter is a dummy parameter used to differentiate between prefix and postfix versions of the 
