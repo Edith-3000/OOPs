@@ -410,7 +410,8 @@
   member method, then they must be made members of ostream and istream classes, which is not a good option 
   most of the time. Therefore, these operators are overloaded as global functions with two parameters, cout 
   and object of user defined class.                 
-  # Visit GfG or https://www.youtube.com/watch?v=2972LRdyquk for thorough explanation.
+  # Visit GfG article (https://www.geeksforgeeks.org/overloading-stream-insertion-operators-c/) or 
+    https://www.youtube.com/watch?v=2972LRdyquk for thorough explanation.
 
 * Function Overriding ----->
   It is the mechanism using which a function "defined" in the base class is once again "defined" in the derived
