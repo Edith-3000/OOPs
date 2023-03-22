@@ -330,6 +330,8 @@
 
   4. Overloading binary operator by friend function. (in this case only two arguements are passed to the 
                                                       oveloaded function)
+  # Ref: https://www.geeksforgeeks.org/what-are-the-operators-that-can-be-and-cannot-be-overloaded-in-cpp/
+         https://www.geeksforgeeks.org/types-of-operator-overloading-in-cpp/
 
 * Some of operators which cannot be overloaded are ---->
   ?: (ternary)
@@ -338,9 +340,11 @@
   :: (scope resolution)
   sizeof (object size information)
 
-* Operator cannot be used to overload when declaring that function as friend function = () or [] or ->
+* Operator cannot be used to overload when declaring that function as friend function are = () or [] or ->
+  # Ref: https://www.geeksforgeeks.org/types-of-operator-overloading-in-cpp/
 
 * Compiler implicitly defines an assignment operator and copy constructor.
+  # Ref: https://www.geeksforgeeks.org/copy-constructor-vs-assignment-operator-in-c/
 
 * Then when should we write our own assignment operator in C++?
   ===> The answer is same as that for Copy Constructor. If a class doesn’t contain pointers, then there 
@@ -348,6 +352,7 @@
        constructor and assignment operators for every class. The compiler created copy constructor and 
        assignment operator may not be sufficient when we have pointers or any run time allocation of 
        resource like file handle, a network connection etc. 
+  # Ref: https://www.geeksforgeeks.org/assignment-operator-overloading-in-c/
 
 * In C++, it is a very good practice and highly recommended that assignment operator should be overloaded
   with self assignment check.
