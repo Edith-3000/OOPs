@@ -208,14 +208,15 @@
    2. Multiple Inheritance
    3. Multilevel Inheritance
    4. Hierarchical Inheritance
-   5. Hybrid Inheritance.
+   5. Hybrid (Virtual) Inheritance.
    Ref: https://www.geeksforgeeks.org/inheritance-in-c/
    
 * In Multiple Inheritance the constructors of classes are called from the child class towards base class and are
   executed from base class towards child class. 
   Whereas the destructors of classes are called from the child class towards base class and are executed from child
   class towards base class. 
-
+  Ref: https://www.geeksforgeeks.org/multiple-inheritance-in-c/
+  
 * THE DIAMOND PROBLEM ===> It occurs when 2 (here B & C) base classes of a derived class (i.e. D) have a common 
                            base class (i.e. A). This causes ambiguity, as D gets 2 copies of all the attributes 
                            of A.
@@ -236,10 +237,12 @@
       class B : virtual public A {};
    Syntax 2:
       class C : public virtual A {};
-
+   # Ref: https://www.geeksforgeeks.org/virtual-base-class-in-c/
+   
    * When a base class is specified as a virtual base, it can act as an indirect base more than once without 
      duplication of its data members. A single copy of its data members is shared by all the base classes that use 
      virtual base.
+   # Ref: https://www.educative.io/answers/what-is-a-diamond-problem-in-object-oriented-programming
    
 * Order of Constructor Call with Inheritance in C++ -------->
     Points to Remember: 
