@@ -248,8 +248,11 @@
     Points to Remember: 
     1. Whether derived class's default constructor is called or parameterised is called, base class's default 
        constructor is always called inside them.
-
-    2. To call base class's parameterised constructor inside derived class's parameterised constructor, we 
+    
+    2. The parameterized constructor of base class cannot be called in default constructor of sub class, it 
+       should be called in the parameterized constructor of sub class.
+    
+    3. To call base class's parameterised constructor inside derived class's parameterised constructor, we 
        must mention it explicitly while declaring derived class's parameterized constructor. 
        The syntax for the same is: ===>
        Derived_class_name (data_type_of_arguement variable_name):Base_class_name(variable_name),
@@ -261,7 +264,7 @@
   to its own class members, but a Derived class object also have inherited property of Base class, and only base 
   class constructor can properly initialize base class members. 
   Hence all the constructors are called, else object wouldn't be constructed properly.
-
+  
 * When we use 'virtual' keyword, the default constructor of "grandparent class" is called by default even if the 
   parent classes explicitly call parameterized constructor. 
   Fore more info visit: https://www.geeksforgeeks.org/multiple-inheritance-in-c/
