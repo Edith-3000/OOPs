@@ -197,6 +197,7 @@
 
   3. Private mode: If we derive a sub class from a private base class. Then both public member and protected 
                    members of the base class will become private in derived class.   
+  NOTE: If no mode of inheritance is specified, then "Private" mode is the default mode of inheritance.
   
   # NOTE: The private members of the base class cannot be ACCESSED by derived class in any case, but it is true  
           that ALL the members of parent class are AVAILABLE for the child class.
