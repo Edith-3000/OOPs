@@ -178,6 +178,7 @@
     
 * Can a destructor be virtual?
   Yes, in fact, it is always a good idea to make destructors virtual in base class when we have a virtual function.   
+  Ref: https://www.geeksforgeeks.org/destructors-c/
 
 * In C++ we can pass class’s objects as arguments and also return them from a function the same way we pass and 
   return other variables. No special keyword or header file is required to do so.
