@@ -465,14 +465,16 @@
   you can call a virtual function for that object and execute the derived class’s version of the function.
 
 * Rules for Virtual Functions ----->
-  1. Virtual functions cannot be static and also cannot be a friend function of another class.
-  2. Virtual functions should be accessed using pointer or reference of base class type to achieve run time 
+  1. Virtual functions cannot be static.
+  2. A virtual function can be a friend function of another class.
+  3. Virtual functions should be accessed using pointer or reference of base class type to achieve run time 
      polymorphism.
-  3. The prototype of virtual functions should be same in base as well as derived class.
-  4. They are always defined in base class and overridden in derived class. It is not mandatory for derived 
+  4. The prototype of virtual functions should be same in base as well as derived class.
+  5. They are always defined in base class and overridden in derived class. It is not mandatory for derived 
      class to override (or re-define the virtual function), in that case base class version of function is used.
-  5. A class may have virtual destructor but it cannot have a virtual constructor.    
-
+  6. A class may have virtual destructor but it cannot have a virtual constructor.    
+ # Ref: https://www.geeksforgeeks.org/virtual-function-cpp/
+ 
 * It is recommended, any time you have a virtual function in a class, you should immediately add a virtual 
   destructor (even if it does nothing). This way, you ensure against any surprises later.
 
@@ -481,6 +483,7 @@
   a virtual destructor. 
   Making base class destructor virtual guarantees that the object of derived class is destructed properly, 
   i.e., both base class and derived class destructors are called. 
+  # Ref: https://www.geeksforgeeks.org/virtual-destructor/
 
 * Late binding(Runtime) is done in accordance with the content of pointer (i.e. location pointed to by pointer) 
   and Early binding(Compile time) is done according to the type of pointer. 
