@@ -535,3 +535,4 @@
 * try and catch should always be written in pair. 
   throw should always be written either in try block or in any function called in the try block.
   # Ref: https://www.youtube.com/watch?v=asekOytwNw4&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=59&ab_channel=C%2B%2BbySaurabhShuklaSir
+  Ref: https://www.youtube.com/playlist?list=PLfVsf4Bjg79Cx42Myce8bIg1nVBVSFKyx
