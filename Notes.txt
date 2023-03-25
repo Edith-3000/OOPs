@@ -521,3 +521,23 @@
 * So why an abstract class is created ?
   ===> So as to incorporate the concept of generalization in object oriented programming, for detais refer ==>
        https://youtu.be/0IR_D1qZy2g?list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&t=690
+       
+* Exception Handling in C++
+  # Exception is any abnormal behaviour, run time error.
+  # Exceptions are off beat situation in your program where your program should be ready to handle it with 
+    appropriate response.
+    
+* In-built mechanism in C++ for exception handling is executed with 3 keywords - try, throw & catch.
+  # Program statements that you want to monitor for exceptions are contained in a try block.
+  # If any exception occurs within try block, it is thrown (using throw).
+  # The exception is caught, using catch, and processed.
+  
+* try and catch should always be written in pair. 
+  throw should always be written either in try block or in any function called in the try block.
+  # Ref: https://www.youtube.com/watch?v=asekOytwNw4&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=59&ab_channel=C%2B%2BbySaurabhShuklaSir
+  
+  
+  
+  * try and catch should always be written in pair. Although throw keyword can be written independently (compiler
+  will never complain) but it should always be written in try block.
+  
