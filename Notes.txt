@@ -519,5 +519,5 @@
 * Why pure virtual functions are made ?
   ===> So as to create an abstract class.
 * So why an abstract class is created ?
- ===> So as to incorporate the concept of generalization in object oriented programming, for detais refer ==>
-      https://www.youtube.com/watch?v=0IR_D1qZy2g&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=46
+  ===> So as to incorporate the concept of generalization in object oriented programming, for detais refer ==>
+       https://youtu.be/0IR_D1qZy2g?list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&t=690
