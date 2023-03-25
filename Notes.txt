@@ -448,7 +448,8 @@
   pointer to its base class. Polymorphism is the art of taking advantage of this simple but powerful and 
   versatile feature, that brings Object Oriented Methodologies to its full potential.
   In C++, a special type/subtype relationship exists in which a base class pointer or a reference can address 
-  any of its derived class subtypes without programmer intervention. 
+  any of its derived class subtypes without programmer intervention. This ability to manipulate more than one 
+  type with a pointer or a reference to a base class is spoken of as polymorphism. 
   visit: https://stackoverflow.com/questions/9425822/why-use-base-class-pointers-for-derived-classes
 
 * Why use base class pointer for derived classe object?
