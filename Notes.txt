@@ -496,6 +496,7 @@
 * Sometimes implementation of all function cannot be provided in a base class because we don’t know the 
   implementation. Such a class is called abstract class.
   OR A class containing at least 1 pure virtual function is called an abstract class.
+  # Ref: https://www.nielit.gov.in/gorakhpur/sites/default/files/Gorakhpur/ALevel_2_DS_31%20Mar%202020_RJS.pdf
 
 * An abstract class is a class that is designed to be specifically used as a base class. An abstract class contains
   at least one pure virtual function. You declare a pure virtual function by using a pure specifier (= 0) in the 
@@ -506,13 +507,14 @@
   Ref: https://www.ibm.com/docs/en/zos/2.4.0?topic=only-abstract-classes-c
 
 * We can have pointers and references of abstract class type but we can't instantiate an abstract class i.e. no 
-  object formation of abstarct of abstrct class is allowed.
+  object formation of abstract class is allowed.
 
 * A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have 
   implementation, we only declare it. A pure virtual function is declared by assigning 0 in declaration.
+  Ref: https://www.nielit.gov.in/gorakhpur/sites/default/files/Gorakhpur/ALevel_2_DS_31%20Mar%202020_RJS.pdf
   OR 
   A do nothing virtual function is a pure virtual function.
-  visit: https://www.youtube.com/watch?v=0IR_D1qZy2g&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=46
+  Visit: https://www.youtube.com/watch?v=0IR_D1qZy2g&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=46
 
 * Why pure virtual functions are made ?
   ===> So as to create an abstract class.
